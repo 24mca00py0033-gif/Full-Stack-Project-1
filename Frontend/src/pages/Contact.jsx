@@ -5,19 +5,19 @@ import NewsletterBox from '../components/NewsletterBox';
 
 const Contact = () => {
   return (
-    <div>
-      <div className='text-center text-2xl pt-10 border-t'>
+    <div className='section-shell'>
+      <div className='text-center text-2xl pt-10'>
         <Title text1={'Contact'} text2={'Us'} />
       </div>
-      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-112.5' src={assets.contact_img} alt="" />
-        <div className='flex flex-col justify-centre items-start gap-6'>
-          <p className='font-semibold text-xl text-gray-600'>Our Store </p>
-          <p className='text-gray-500'>5709 Gazhiabad Delhi South UP <br />UP,INDIA</p>
-          <p className='text-gray-500'> Mobile-9985454545 <br />streethood@gamil.com</p>
-          <p className='font-semibold text-xl text-shadow-gray-600'>Carres at Forever</p>
-           <p className='text-gray-500'>Learn More about us and carreses <br />UP,INDIA</p>
-          <button className='border border-black text-sm py-4 px-8 hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+      <div className='my-10 flex flex-col gap-10 md:flex-row mb-28'>
+        <img className='w-full rounded-[2rem] md:max-w-[32rem]' src={assets.contact_img} alt="" />
+        <div className='neo-card flex flex-col items-start gap-6 rounded-[2rem] p-8'>
+          <p className='text-xl font-semibold text-slate-900'>Our Store </p>
+          <p className='text-slate-500'>5709 Gazhiabad Delhi South UP <br />UP,INDIA</p>
+          <p className='text-slate-500'> Mobile-9985454545 <br />streethood@gamil.com</p>
+          <p className='text-xl font-semibold text-slate-900'>Careers at Forever</p>
+           <p className='text-slate-500'>Learn More about us and careers <br />UP,INDIA</p>
+          <button className='neo-button px-8 py-4 text-sm'>Explore Jobs</button>
 
         </div>
       </div>

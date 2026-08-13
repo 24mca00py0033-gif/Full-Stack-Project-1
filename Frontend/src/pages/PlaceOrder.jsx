@@ -79,9 +79,9 @@ const PlaceOrder = () => {
   }
 
   return (
-    <form onSubmit={onSubmitHandler} className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
+    <form onSubmit={onSubmitHandler} className='section-shell flex min-h-[80vh] flex-col justify-between gap-4 pt-5 sm:flex-row sm:pt-14'>
 {/*  left side  */}
-      <div className='flex flex-col gap-4 w-full sm:max-w-120'>
+      <div className='neo-card flex w-full flex-col gap-4 rounded-4xl p-6 sm:max-w-136'>
       <div className='text-xl sm:text-2xl my-3'>
         <Title  text1={'DELIVERY'} text2={'INFORMATION'}/>   
       </div>
@@ -107,7 +107,7 @@ const PlaceOrder = () => {
         <div className='mt-8 min-w-80'>
             <CartTotal/>
         </div>
-        <div className='mt-12'> 
+        <div className='neo-card mt-12 rounded-4xl p-6'> 
           <Title text1={'Payement'} text2={'Method'}/>
 
           <div className='flex gap-3 flex-col lg:flex-row'>
@@ -125,7 +125,7 @@ const PlaceOrder = () => {
               </div>
           </div>
           <div className='w-full text-end mt-8'>
-            <button type='submit' className='bg-black text-white px-16 py-3 text-sm'>Place Order</button>
+            <button type='submit' className='neo-button px-16 py-3 text-sm'>Place Order</button>
           </div>
         </div>
 

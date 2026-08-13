@@ -1,4 +1,5 @@
 import React from 'react'
+import { Analytics } from "@vercel/analytics/next"
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -17,7 +18,12 @@ import SearchBar from './components/SearchBar';
 
 const App = () => {
   return (
-    <div  className='px-4 sm:px-[5vw] md:px=[7w] lg:px-[9vw]'>
+    <div className='relative min-h-screen overflow-x-hidden px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] text-slate-900'>
+      <div className='pointer-events-none fixed inset-0 -z-10 overflow-hidden'>
+        <div className='absolute -left-24 top-10 h-72 w-72 rounded-full bg-pink-300/30 blur-3xl' />
+        <div className='absolute right-0 top-32 h-72 w-72 rounded-full bg-sky-300/25 blur-3xl' />
+        <div className='absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-indigo-200/20 blur-3xl' />
+      </div>
       <ToastContainer />
       <Navbar/>
       <SearchBar/>

@@ -3,21 +3,21 @@ import { assets } from '../assets/assets';
 
 const OurPolicy = () => {
   return (
-    <div className='flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-sm sm:text-sm md:text-base text-gray-700'>
-      <div>
-        <img src={assets.exchange_icon} className='w-12 m-auto mb-5' alt="" />
-        <p className='font-semibold '>Easy Exchange Policy </p>
-        <p className='text-gray-400'>We Offer Hastle Free Exchange Policy</p>
+    <div className='grid gap-4 py-16 sm:grid-cols-3'>
+      <div className='neo-card rounded-[1.5rem] p-6 text-center'>
+        <img src={assets.exchange_icon} className='mx-auto mb-5 w-12' alt="" />
+        <p className='font-semibold text-slate-900'>Easy Exchange Policy </p>
+        <p className='mt-2 text-sm text-slate-500'>We offer hassle-free exchange and quick support.</p>
       </div>
-        <div>
-        <img src={assets.quality_icon} className='w-12 m-auto mb-5' alt="" />
-        <p className='font-semibold '>Days Return Policy </p>
-        <p className='text-gray-400'>We Provide 7 Days Return Policy</p>
+        <div className='neo-card rounded-[1.5rem] p-6 text-center'>
+        <img src={assets.quality_icon} className='mx-auto mb-5 w-12' alt="" />
+        <p className='font-semibold text-slate-900'>7 Days Return Policy </p>
+        <p className='mt-2 text-sm text-slate-500'>We provide a simple, customer-first return flow.</p>
       </div>
-        <div>
-        <img src={assets.support_img} className='w-12 m-auto mb-5' alt="" />
-        <p className='font-semibold '>Best Customer Support Team </p>
-        <p className='text-gray-400'>We Provide 24/7 Customer Support</p>
+        <div className='neo-card rounded-[1.5rem] p-6 text-center'>
+        <img src={assets.support_img} className='mx-auto mb-5 w-12' alt="" />
+        <p className='font-semibold text-slate-900'>24/7 Customer Support </p>
+        <p className='mt-2 text-sm text-slate-500'>Real help when you need it, not just a FAQ page.</p>
       </div>
     </div>
   )

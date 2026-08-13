@@ -17,16 +17,19 @@ const SearchBar = () => {
     },[location])
 
   return showSearch && visible ? (
-    <div className='border-t border-b bg-gray-50 text-center'>
-        <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-1/2'>
-        <input value={search} onChange={(e)=>setSearch(e.target.value)} className='flex-1 outline-none bg-inherit text-sm '
+    <div className='my-4 rounded-[1.5rem] border border-white/70 bg-white/75 text-center shadow-[0_16px_45px_rgba(15,23,42,0.08)] backdrop-blur-xl'>
+        <div className='mx-auto my-5 inline-flex w-11/12 items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 sm:w-1/2'>
+        <input value={search} onChange={(e)=>setSearch(e.target.value)} className='flex-1 border-none bg-transparent text-sm outline-none '
         type="text" placeholder="Search" />
         <img className='w-4'
          src={assets.search_icon} alt="" />
         </div>
-        <img onClick={()=>setShowSearch(false)}
-        className='inline w-3 cursor-pointer'
+        <button onClick={()=>setShowSearch(false)} className='mb-5 inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white' type='button'>
+          <img
+        className='inline w-3 cursor-pointer invert'
         src={assets.cross_icon} alt="" />
+          Close
+        </button>
       
     </div>
   ):null

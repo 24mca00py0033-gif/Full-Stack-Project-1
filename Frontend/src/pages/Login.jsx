@@ -46,29 +46,29 @@ const Login = () => {
     if(token){
       navigate('/')
     }
-  })
+  },[token,navigate])
 
   return (
-    <form  onSubmit={onSubmitHandler}className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
-      <div className='inline-flex items-center gap-2 mb-2 mt-10'>
-       <p className='prata-regular text-3xl '>
+    <form  onSubmit={onSubmitHandler} className='glass-panel mx-auto mt-12 flex w-[92%] max-w-[28rem] flex-col items-center gap-5 rounded-[2rem] px-6 py-8 text-slate-800 sm:px-10'>
+      <div className='inline-flex items-center gap-2 mb-2'>
+       <p className='prata-regular text-4xl text-slate-950'>
         {currentState}
        </p>
-       <hr  className='border-none h-[1.5px] w-8 bg-gray-800'/>
+       <hr  className='border-none h-[1.5px] w-8 bg-slate-800'/>
       </div>
-      {currentState==='Login'?'': <input onChange={(e)=>setName(e.target.value)}  value={name} type="text" className='w-full px-3 py-2 border border-gray-800' placeholder="Name"  required/>}
+      {currentState==='Login'?'': <input onChange={(e)=>setName(e.target.value)}  value={name} type="text" className='w-full' placeholder="Name"  required/>}
      
-       <input onChange={(e)=>setEmail(e.target.value)} value={email}  type="email" className='w-full px-3 py-2 border border-gray-800' placeholder="Email"  required/>
-        <input onChange={(e)=>setPassword(e.target.value)} value={password} type="Password" className='w-full px-3 py-2 border border-gray-800' placeholder="Password " required />
-        <div className='w-full flex justify-between text-sm -mt-2'>
-          <p className='cursor-pointer'>Forgot your Password?</p>
+       <input onChange={(e)=>setEmail(e.target.value)} value={email}  type="email" className='w-full' placeholder="Email"  required/>
+        <input onChange={(e)=>setPassword(e.target.value)} value={password} type="password" className='w-full' placeholder="Password" required />
+        <div className='w-full flex justify-between text-sm text-slate-500 -mt-2'>
+          <p className='cursor-pointer hover:text-slate-900'>Forgot your Password?</p>
           {
             currentState==='Login'
-            ? <p onClick={()=>setCurrentState('Sign up')} className='cursor-pointer'>Create Account</p>
-            : <p onClick={()=>setCurrentState('Login')} className='cursor-pointer'>Login Here</p>
+            ? <p onClick={()=>setCurrentState('Sign up')} className='cursor-pointer hover:text-slate-900'>Create Account</p>
+            : <p onClick={()=>setCurrentState('Login')} className='cursor-pointer hover:text-slate-900'>Login Here</p>
           }
         </div>
-        <button className='bg-black text-white font-light px-8 py-2 mt-4'>{currentState==='Login'?'Sign in':'Sign Up'}</button>
+        <button className='neo-button mt-4 w-full px-8 py-3 font-semibold'>{currentState==='Login'?'Sign in':'Sign Up'}</button>
     </form>
   )
 }

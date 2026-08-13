@@ -30,33 +30,35 @@ const Cart = () => {
   },[cartItems,products])
 
   return (
-    <div className='border-t pt-14'>
-      <div className='text-2xl mb-3'>
+    <div className='section-shell pt-2'>
+      <div className='mb-4 text-2xl'>
         <Title text1={'YOUR'} text2={'CART'} />
       </div>
-      <div className=''>
+      <div className='space-y-4'>
     {
       cartData.map((item,index)=>{
         const productData=products.find((product)=>product._id===item._id)
         return (
-          <div key={index} className='py-4 border-t border-b text-gray-700 grid grid-cols-4 sm:grid-cols-5 items-center gap-4 '>
-            <div className='flex items-start gap-6'>
-              <img className='w-16 sm:w-20'
+          <div key={index} className='neo-card grid grid-cols-1 items-center gap-4 rounded-[1.5rem] p-4 text-slate-700 sm:grid-cols-[1.2fr_0.4fr_auto]'>
+            <div className='flex items-start gap-4'>
+              <img className='w-16 rounded-xl sm:w-20'
               src={productData.image[0]} alt="" />
               <div >
-                  <p className='text-xs sm:text-lg font-medium'>{productData.name}</p>
-                  <div className='flex items-center gap-5 mt-2'>
-                      <p>{currency}{productData.price}</p>
-                      <p className='px-2 sm:px-3 sm:py-1 border bg-slate-50'>{item.size}</p>
+                  <p className='text-sm font-semibold text-slate-950 sm:text-lg'>{productData.name}</p>
+                  <div className='mt-2 flex items-center gap-5'>
+                      <p className='font-medium text-slate-600'>{currency}{productData.price}</p>
+                      <p className='rounded-full bg-slate-950/5 px-3 py-1 text-xs font-semibold text-slate-700'>{item.size}</p>
                   </div>
               </div>
             </div>
             <input onChange={(e)=>e.target.value===''|| e.target.value===0 ? null : updateQuantity(item._id,item.size,Number(e.target.value))}
-             className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1 '
+             className='max-w-20 justify-self-start sm:justify-self-center'
               type='number' min={1} defaultValue={item.quantity}/>
-              <img  onClick={()=>updateQuantity(item._id,item.size,0)}
-              className='w-4 mr-4 sm:w-5 cursor-pointer'
+              <button onClick={()=>updateQuantity(item._id,item.size,0)} className='grid h-10 w-10 place-items-center rounded-full bg-rose-50 text-rose-500 transition hover:bg-rose-100' type='button' aria-label='Remove item'>
+              <img  
+              className='w-4 sm:w-5 cursor-pointer'
               src={assets.bin_icon} alt="" />
+              </button>
 
           
           </div>
@@ -66,11 +68,11 @@ const Cart = () => {
       </div>
 
       <div className='flex justify-end my-20'>
-        <div className='w-full sm:w-112.5'>
+        <div className='glass-panel w-full rounded-[2rem] p-6 sm:w-[28rem]'>
           <CartTotal/>
           <div className='w-full text-end'>
             <button onClick={()=>navigate('/place-order')}
-            className='bg-black text-white text-sm my-8 px-8 py-3 cursor-pointer '
+            className='neo-button my-8 px-8 py-3 text-sm cursor-pointer '
             >PROCEED TO CHECKOUT </button>
 
           </div>
