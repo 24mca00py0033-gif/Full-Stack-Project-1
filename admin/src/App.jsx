@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 import NavBar from './components/NavBar.jsx';
 import SideBar from './components/SideBar.jsx';
 import { Routes, Route } from "react-router-dom"

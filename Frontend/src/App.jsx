@@ -1,5 +1,5 @@
 import React from 'react'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/Home"
 import About from "./pages/About"
